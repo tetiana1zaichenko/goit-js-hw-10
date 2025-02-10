@@ -1,8 +1,42 @@
-function addLeadingZero(value) {
-    const days = value.toString().padStart(3, '0');
-    const hours = value.toString().padStart(2, '0');
-    const mins = value.toString().padStart(2, '0');
-    const secs = value.toString().padStart(2, '0');
-    return console.log(`${days}:${hours}:${mins}:${secs}`);
+import iziToast from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
 
+const form = document.querySelector('.form');
+
+form.addEventListener('submit', evt => {
+    evt.preventDefault();
+
+    const delay = Number(form.elements.delay.value);
+    const state = form.elements.state.value;
+
+    const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (state === 'fulfilled') {
+                resolve(delay);
+            } else {
+                reject(delay);
+            }
+        }, delay);
+        
+    });
+
+promise
+    .then(delay => {
+        iziToast.success({
+            messageColor: 'white',
+            position: 'topRight',
+    message: `✅ Fulfilled promise in ${delay}ms`
+});
+	})
+    .catch(delay => {
+        iziToast.error({
+            messageColor: 'white',
+            position: 'topRight',
+    message: `❌ Rejected promise in ${delay}ms`
+});
+
+	});
 }
+);
+
+

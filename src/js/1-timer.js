@@ -48,14 +48,17 @@ input.setAttribute("disabled", "");
 
 const countTime = () => {
     const initTime = Date.now();
-     dif = userSelectedDate - initTime;
+    const userInitTime = userSelectedDate.getTime()
+    dif = userInitTime - initTime;
+    console.log(userInitTime);
+    console.log(initTime);
     const time = convertMs(dif);
     days.textContent = addLeadingZeroForDay(time.days);
     hours.textContent = addLeadingZero(time.hours);
     minutes.textContent = addLeadingZero(time.minutes);
     seconds.textContent = addLeadingZero(time.seconds);
 
-    if (dif = 0) {
+    if (dif === 0) {
         clearInterval(intervalId);
     };
 };
