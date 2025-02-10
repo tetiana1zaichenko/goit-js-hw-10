@@ -88,31 +88,4 @@ function addLeadingZeroForDay(value) {
 }
 
 
-// function addLeadingZero({ days, hours, minutes, seconds }) {
-//     const d = days.toString().padStart(3, '0');
-//     const h = hours.toString().padStart(2, '0');
-//     const m = minutes.toString().padStart(2, '0');
-//     const s = seconds.toString().padStart(2, '0');
-//     return `${d}:${h}:${m}:${s}`;
-
-// }
-
-
-// function getTimeComponents(time) {
-//     const days = (Math.floor((time % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24)));
-//     const hours = (Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-//     const mins = (Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
-//     const secs = (Math.floor((time % (1000 * 60)) / (1000)));
-
-//     return { days, hours, mins, secs };
-// }
-
-// function timeToSTR({ days, hours, mins, secs }) {
-//     days = days.toString().padStart(3, '00');
-//     hours = hours.toString().padStart(2, '0');
-//     mins = mins.toString().padStart(2, '0');
-//     secs = secs.toString().padStart(2, '0');
-//     return `${days}:${hours}:${mins}:${secs}`;
-
-// }
 
