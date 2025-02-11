@@ -41,6 +41,9 @@ flatpickr(input, options);
 
 
 btnStart.addEventListener('click', evt => {
+
+  clearInterval(intervalId);
+  
     intervalId = setInterval(countTime, 1000);
     btnStart.setAttribute("disabled", "");
 input.setAttribute("disabled", "");
