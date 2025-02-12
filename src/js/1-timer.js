@@ -61,8 +61,16 @@ const countTime = () => {
     minutes.textContent = addLeadingZero(time.minutes);
     seconds.textContent = addLeadingZero(time.seconds);
 
-    if (dif === 0) {
-        clearInterval(intervalId);
+    if (dif <= 0) {
+      clearInterval(intervalId);
+
+    days.textContent = "000";
+    hours.textContent = "00";
+    minutes.textContent = "00";
+    seconds.textContent = "00";
+      
+    btnStart.removeAttribute("disabled");
+    input.removeAttribute("disabled");
     };
 };
 
